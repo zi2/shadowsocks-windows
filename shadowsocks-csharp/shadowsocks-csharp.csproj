@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Shadowsocks</RootNamespace>
     <AssemblyName>Shadowsocks</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>
@@ -73,10 +73,11 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>3rd\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>3rd\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
@@ -87,6 +88,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="3rd\TdApi\ApiException.cs" />
+    <Compile Include="3rd\TdApi\DefaultClient.cs" />
+    <Compile Include="3rd\TdApi\IClient.cs" />
+    <Compile Include="3rd\TdApi\IRequest.cs" />
+    <Compile Include="3rd\TdApi\IResponse.cs" />
+    <Compile Include="3rd\TdApi\Request.cs" />
+    <Compile Include="3rd\TdApi\Requests\GetNodesRequest.cs" />
+    <Compile Include="3rd\TdApi\Requests\GetUserRequest.cs" />
+    <Compile Include="3rd\TdApi\Requests\Node.cs" />
+    <Compile Include="3rd\TdApi\Requests\TokenRequest.cs" />
+    <Compile Include="3rd\TdApi\Response.cs" />
+    <Compile Include="3rd\TdApi\Requests\User.cs" />
+    <Compile Include="3rd\TdApi\UserFriendlyException.cs" />
     <Compile Include="3rd\zxing\BarcodeFormat.cs" />
     <Compile Include="3rd\zxing\BaseLuminanceSource.cs" />
     <Compile Include="3rd\zxing\Binarizer.cs" />
@@ -139,6 +153,8 @@
     <Compile Include="3rd\zxing\ResultPoint.cs" />
     <Compile Include="3rd\zxing\ResultPointCallback.cs" />
     <Compile Include="3rd\zxing\WriterException.cs" />
+    <Compile Include="Event\EventBus.cs" />
+    <Compile Include="Event\IEvent.cs" />
     <Compile Include="Model\HotKeyConfig.cs" />
     <Compile Include="Model\ProxyConfig.cs" />
     <Compile Include="Proxy\DirectConnect.cs" />
@@ -222,6 +238,12 @@
     <Compile Include="View\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MenuViewController.cs" />
     <Compile Include="View\ProxyForm.cs">
       <SubType>Form</SubType>
@@ -261,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProxyForm.resx">
       <DependentUpon>ProxyForm.cs</DependentUpon>

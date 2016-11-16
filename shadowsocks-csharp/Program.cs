@@ -69,7 +69,9 @@ namespace Shadowsocks
 #else
                 Logging.OpenLogFile();
 #endif
+
                 _controller = new ShadowsocksController();
+                new LoginForm(_controller).ShowDialog();
                 _viewController = new MenuViewController(_controller);
                 HotKeys.Init();
                 _controller.Start();
